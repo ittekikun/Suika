@@ -35,7 +35,7 @@ public class Suika extends JavaPlugin implements Listener
     @EventHandler
     public void onEvent(PlayerMoveEvent event)
     {
-        Location location = new Location(event.getTo().getWorld(), event.getTo().getX(), event.getTo().getY() - 1, event.getTo().getZ());
+        Location location = event.getTo().clone().add(0, -1, 0);
 
         if(location.getBlock().getType() == Material.MELON_BLOCK)
         {
